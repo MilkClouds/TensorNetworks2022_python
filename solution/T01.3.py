@@ -19,11 +19,11 @@ freq = np.fft.fftfreq(Uf.shape[0])
 Uf = Uf[freq > 0, :]
 freq = freq[freq > 0]
 for i in [0, 1, 2]:
-    plt.plot(freq, np.abs(Uf[:, i]), label=f"Uf[{i}], S={S[i]}", linewidth=0.5)
+    plt.plot(freq, np.abs(Uf[:, i]), label=f"Uf[{i}], S={S[i]:.02f}", linewidth=0.5)
 
 for i in [0, 1, 2]:
     i = S.shape[0] - 1 - i
-    plt.plot(freq, np.abs(Uf[:, i]), label=f"Uf[{i}], S={S[i]}", linewidth=0.5)
+    plt.plot(freq, np.abs(Uf[:, i]), label=f"Uf[{i}], S={S[i]:.02f}", linewidth=0.5)
 plt.legend()
 plt.savefig("fftU.png")
 plt.close()
@@ -32,11 +32,11 @@ freq = np.fft.fftfreq(Vf.shape[0])
 Vf = Vf[freq > 0, :]
 freq = freq[freq > 0]
 for i in [0, 1, 2]:
-    plt.plot(freq, np.abs(Vf[:, i]), label=f"Vf[{i}], S={S[i]}", linewidth=0.5)
+    plt.plot(freq, np.abs(Vf[:, i]), label=f"Vf[{i}], S={S[i]:.02f}", linewidth=0.5)
 
 for i in [0, 1, 2]:
     i = S.shape[0] - 1 - i
-    plt.plot(freq, np.abs(Vf[:, i]), label=f"Vf[{i}], S={S[i]}", linewidth=0.5)
+    plt.plot(freq, np.abs(Vf[:, i]), label=f"Vf[{i}], S={S[i]:.02f}", linewidth=0.5)
 plt.legend()
 plt.savefig("fftV.png")
 plt.close()
